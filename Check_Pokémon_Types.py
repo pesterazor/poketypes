@@ -42,7 +42,7 @@ types = ["normal", "fighting", "flying", "poison", "ground", "rock", "bug",
          "ice", "dragon", "dark", "fairy"]
 
 
-def typesMultFactor(attackType, defendType):
+def typesMultFactor(attackType, defendType): # Calculates the damage multiplication factor
     return types_matrix[types.index(attackType)][types.index(defendType)]
 
 
