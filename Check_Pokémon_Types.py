@@ -48,6 +48,7 @@ req = "flying,Steel"
 #req = input("Insert the opponent type/s (e.g. flying, steel):\n>>> ")
 req = req.replace(", ", ",").lower()
 req = req.split(",")
+assert (len(req) == 1) or (len(req) == 2)
 
 noDamage = []
 vLowDamage = []
