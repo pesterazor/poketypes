@@ -1,4 +1,3 @@
-import pytest
 
 types_matrix = [[1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.0, 0.5, 1.0, 1.0, 1.0,
                  1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
@@ -42,7 +41,7 @@ types = ["normal", "fighting", "flying", "poison", "ground", "rock", "bug",
          "ice", "dragon", "dark", "fairy"]
 
 
-def typesMultFactor(attackType, defendType): # Calculates the damage multiplication factor
+def typesMultFactor(attackType, defendType):
     return types_matrix[types.index(attackType)][types.index(defendType)]
 
 
