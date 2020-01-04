@@ -73,7 +73,7 @@ if len(req) == 1:
         i = i + 1
 else:
     for t in types_matrix:
-        damage = t[types.index(str(req[0]))] * t[types.index(str(req[0]))]
+        damage = t[types.index(str(req[0]))] * t[types.index(str(req[1]))]
         if damage == 4.0:
             quadDamage = quadDamage + [types[i]]
         elif damage == 2.0:
@@ -88,6 +88,7 @@ else:
             noDamage = noDamage + [types[i]]
         i = i + 1
 
+print("")
 if quadDamage != []:
     print("#" * 10 + " 4x damage " + "#" * 10)
     for t in quadDamage:
