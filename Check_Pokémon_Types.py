@@ -46,10 +46,6 @@ def typesMultFactor(attackType, defendType):
     return types_matrix[types.index(attackType)][types.index(defendType)]
 
 
-def test_list_casting():
-    t = types.index("steel")
-
-
 while True:
     i = 0  # tracks errors
     try:
