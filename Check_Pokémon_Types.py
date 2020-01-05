@@ -75,8 +75,9 @@ quadDamage = []
 
 i = 0
 if len(req) == 1:
-    for t in types_matrix:
-        damage = t[types.index(str(req[0]))]
+    for i in range(18):
+        damage = typesMultFactor(types[i], req[0])
+        print(str(i) + " " + str(damage))
         if damage == 2.0:
             highDamage = highDamage + [types[i]]
         elif damage == 1.0:
@@ -87,8 +88,9 @@ if len(req) == 1:
             noDamage = noDamage + [types[i]]
         i = i + 1
 else:
-    for t in types_matrix:
-        damage = t[types.index(str(req[0]))] * t[types.index(str(req[1]))]
+    for i in range(18):
+        damage = typesMultFactor(
+            types[i], req[0]) * typesMultFactor(types[i], req[1])
         if damage == 4.0:
             quadDamage = quadDamage + [types[i]]
         elif damage == 2.0:
