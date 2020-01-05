@@ -50,8 +50,9 @@ while True:
     i = 0  # tracks errors
     try:
         req = input("Insert the opponent type/s (e.g. flying, steel):\n>>> ")
-        req = req.replace(", ", ",").lower()
-        req = req.split(",")
+        req = req.replace(", ", ",")
+        req = req.replace(" ", ",")
+        req = req.lower().split(",")
         if len(req) == 1:
             i = 1
             test = types.index(str(req[0]))
