@@ -1,3 +1,4 @@
+import pytest
 
 types_matrix = [[1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.0, 0.5, 1.0, 1.0, 1.0,
                  1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
@@ -45,6 +46,10 @@ def typesMultFactor(attackType, defendType):
     return types_matrix[types.index(attackType)][types.index(defendType)]
 
 
+def test_list_casting():
+    t = types.index("steel")
+
+
 while True:
     i = 0  # tracks errors
     try:
@@ -77,7 +82,6 @@ i = 0
 if len(req) == 1:
     for i in range(18):
         damage = typesMultFactor(types[i], req[0])
-        print(str(i) + " " + str(damage))
         if damage == 2.0:
             highDamage = highDamage + [types[i]]
         elif damage == 1.0:
