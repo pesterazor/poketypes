@@ -45,10 +45,26 @@ def typesMultFactor(attackType, defendType):
     return types_matrix[types.index(attackType)][types.index(defendType)]
 
 
-req = input("Insert the opponent type/s (e.g. flying, steel):\n>>> ")
-req = req.replace(", ", ",").lower()
-req = req.split(",")
-assert (len(req) == 1) or (len(req) == 2)
+while True:
+    i = 0  # tracks errors
+    try:
+        req = input("Insert the opponent type/s (e.g. flying, steel):\n>>> ")
+        req = req.replace(", ", ",").lower()
+        req = req.split(",")
+        if len(req) == 1:
+            i = 1
+            test = types.index(str(req[0]))
+        else:
+            i = 1
+            test = types.index(str(req[0]))
+            i = 2
+            test = test * types.index(str(req[1]))
+        break
+    except ValueError:
+        if i == 1:
+            print("Sorry, I cannot understand the 1st type. Try again!\n")
+        elif i == 2:
+            print("Sorry, I cannot understand the 2nd type. Try again!\n")
 
 noDamage = []
 vLowDamage = []
@@ -104,12 +120,12 @@ if normDamage != []:
         print("- " + str(t))
     print("")
 if lowDamage != []:
-    print("#" * 10 + " 0.5x damage " + "#" * 10)
+    print("#" * 9 + " 0.5x damage " + "#" * 9)
     for t in lowDamage:
         print("- " + str(t))
     print("")
 if vLowDamage != []:
-    print("#" * 10 + " 0.25x damage " + "#" * 10)
+    print("#" * 8 + " 0.25x damage " + "#" * 9)
     for t in vLowDamage:
         print("- " + str(t))
     print("")
