@@ -5,12 +5,13 @@ Basically you enter the opponent's type (or couple of types) and the script will
 
 ```
 Insert the opponent type/s (e.g. flying, steel):
-fire, bug
+>>> fire, bug
 
 ########## 4x damage ##########
-rock
+- rock
 
 ########## 2x damage ##########
-flying
-water
+- flying
+- water
+...
 ```
